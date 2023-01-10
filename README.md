@@ -2,7 +2,7 @@
 
 ## Тестовое задание REST API сервер
 
-## Сборка проекта
+# Сборка проекта
 
 1) <code>docker-compose up --build</code>
 2) создать файл с настройками <code>cp .env.example .env</code> (настроить конфигурацию)
