@@ -6,16 +6,6 @@
 
 1) <code>docker-compose up --build</code>
 2) создать файл с настройками <code>cp .env.example .env</code> (настроить конфигурацию)
-
-<code>
-DB_CONNECTION=mysql
-DB_HOST=rest_api_mysql
-DB_PORT=3306
-DB_DATABASE=root
-DB_USERNAME=root
-DB_PASSWORD=root
-</code>
-
 3) <code>docker exec rest_api_app composer install --ignore-platform-reqs</code>
 4) <code>docker exec rest_api_app php artisan config:cache</code>
 5) <code>docker exec rest_api_app php artisan migrate</code>
