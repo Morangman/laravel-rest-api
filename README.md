@@ -2,7 +2,9 @@
 
 ## Тестовое задание REST API сервер
 
-Сборка проекта
+Сайт запускается на хосте - https://assignment.sinepolsky.website/
+
+Сборка локального проекта
 
 1) <code>docker-compose up --build</code>
 2) создать файл с настройками <code>cp .env.example .env</code> (настроить конфигурацию)
@@ -15,7 +17,7 @@
 
 ##
 
-Сайт запускается на хосте - http://localhost/
+Локальная ссылка - http://localhost/
 
 phpMyAdmin на - http://localhost:8080/ пароль и логин root таблица root
 
