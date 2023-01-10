@@ -25,7 +25,7 @@ class RegisterRequest extends FormRequest
             'phone' => 'required|string|regex:/(\+380)[0-9]{9}/',
             'email' => 'required|email:rfc,dns',
             'position_id' => 'required|exists:positions,id',
-            'photo' => 'required|image|mimes:jpg,jpeg|dimensions:width=70,height=70|max:5000',
+            'photo' => 'required|image|mimes:jpg,jpeg|dimensions:min_width=70,min_height=70|max:5000',
             'password' => 'required',
             'c_password' => 'required|same:password',
         ];
