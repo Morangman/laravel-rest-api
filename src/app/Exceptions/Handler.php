@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -43,8 +45,15 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->renderable(function (HttpExceptionInterface $e, $request) {
+            if ($request->is('api/*')) {
+                if ($e->getStatusCode() == 404) {
+                    throw new HttpResponseException(response()->json([
+                        'success' => false,
+                        'message' => 'Page not found',
+                    ], 404));
+                }
+            }
         });
     }
 }

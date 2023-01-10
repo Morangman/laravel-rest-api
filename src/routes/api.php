@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('api')->prefix('v1')->group(function () {
+    Route::get('token', [RegisterController::class, 'getToken']);
+
+    Route::post('users', [RegisterController::class, 'register']);
+
+    Route::get('users', [UserController::class, 'list']);
+
+    Route::get('users/{user_id}', [UserController::class, 'record']);
+
+    Route::get('positions', [UserController::class, 'positions']);
 });
 
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [RegisterController::class, 'login']);
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});

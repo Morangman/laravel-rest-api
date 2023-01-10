@@ -34,7 +34,6 @@ class UserFactory extends Factory
             'phone' => $faker->phoneNumber,
             'photo' => "/media/$imaeName",
             'position_id' => $position->id,
-            'position' => $position->name,
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('password'), // password
