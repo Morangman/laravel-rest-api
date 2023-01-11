@@ -4,6 +4,21 @@
 
 Сайт запускается на хосте - https://assignment.sinepolsky.website/
 
+Использовались:
+
+- tinypng (free trial)
+
+
+- vue js (3)
+- axios
+- vue-router
+- bootstrap
+- vue3-json-viewer
+
+Для запуска сидера наполения данных:
+
+<code>docker exec rest_api_app php artisan db:seed</code>
+
 Сборка локального проекта
 
 1) <code>docker-compose up --build</code>
