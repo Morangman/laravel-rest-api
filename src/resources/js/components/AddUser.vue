@@ -98,7 +98,7 @@
                         },
                     })
                     .then((response) => {
-                        this.errors = null;
+                        this.errors = response.data;
 
                         // this.$router.push({name: 'home'})
                     })
