@@ -9,9 +9,6 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use File;
-use Illuminate\Support\Facades\Storage;
-use Tinify\Tinify;
 
 class RegisterController extends BaseController
 {
